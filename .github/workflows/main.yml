@@ -25,8 +25,9 @@ jobs:
 
       - name: Run Linter
         run: |
-          jshint ./giftlink-backend/**/*.js
+          jshint --config .jshintrc "giftlink-backend/**/*.js"
           echo "Linted all JS files successfully"
+
 
 
 
