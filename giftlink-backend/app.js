@@ -9,6 +9,7 @@ const { loadData } = require("./util/import-mongo/index");
 
 const giftRoutes = require("./routes/giftRoutes");
 const searchRoutes = require("./routes/searchRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 app.use("*", cors());
@@ -44,6 +45,7 @@ app.use(pinoHttp({ logger }));
 //{{insert code here}}
 
 // Global Error Handler
+app.use("/api/auth", authRoutes);
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).send("Internal Server Error");
