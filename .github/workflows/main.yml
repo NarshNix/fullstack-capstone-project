@@ -25,8 +25,9 @@ jobs:
 
       - name: Run Linter
         run: |
-          jshint --config <(echo '{ "esversion": 8 }') ./giftlink-backend/**/*.js
+          jshint ./giftlink-backend/**/*.js
           echo "Linted all JS files successfully"
+
 
 
 
